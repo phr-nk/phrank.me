@@ -8,6 +8,7 @@ https://templatemo.com/tm-525-the-town
 
 html {
   font-size: 18px;
+
 }
 
 body {
@@ -134,6 +135,7 @@ a:focus {
 #hero {
   background-image: url(../img/circ3.JPG);
   background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   min-height: 375px;
   position: relative;
@@ -416,9 +418,10 @@ figure.effect-honey:hover h2 i {
 
 #contact {
   color: white;
-  background-image: url(../img/the-town-bg-02.jpg);
+  background-image: url(../img/circ2.JPG);
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   min-height: 850px;
   position: relative;
   padding-bottom: 50px;
