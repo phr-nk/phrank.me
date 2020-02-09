@@ -10,13 +10,15 @@
     <link rel="stylesheet" href="slick/slick-theme.css">
     <link rel="stylesheet" href="magnific-popup/magnific-popup.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/templatemo-style.css" />
+    <link rel="stylesheet" href="css/templatemo-style.less" />
+    <link rel="stylesheet" href="css/loader.less" />
     <!--
 	The Town
 	https://templatemo.com/tm-525-the-town
 	-->
   </head>
-  <body>    
+  <body>  
+      
     <!-- Hero section -->
     <section id="hero" class="text-white tm-font-big tm-parallax">
       <!-- Navigation -->
@@ -35,11 +37,14 @@
                   <a class="nav-link tm-nav-link" href="#introduction">About Me</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link tm-nav-link" href="#work">Portfollio</a>
+                  <a class="nav-link tm-nav-link" href="#work">Portfolio</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link tm-nav-link" href="FrankTechResume.pdf" target="_blank">Resume</a>
+            </li> 
+              <li class="nav-item">
                   <a class="nav-link tm-nav-link" href="#contact">Contact</a>
-              </li>                    
+              </li>                     
             </ul>
           </div>        
         </div>
@@ -47,10 +52,9 @@
       
       <div class="text-center tm-hero-text-container">
         <div class="tm-hero-text-container-inner">
-            <h2 class="tm-hero-title">Frank Lenoci</h2>
+            <h2 class="tm-hero-title">Hi, I'm Frank</h2>
             <p class="tm-hero-subtitle">
-              Software Developer 
-              <br /> Artist
+             a software developer and artist.
         
             </p>
         </div>        
@@ -89,11 +93,7 @@
           <div class="col-lg-4">
             <i class="fas fa-4x fa-bus text-center tm-icon"></i>
             <h4 class="text-center tm-text-primary mb-4">Curabitur at elit eu risus</h4>
-            <p>
-              Sed ultrices sit amet mi eu malesuada. Cras ultricies gravida
-              nisi, ac pellentesque nunc tincidunt quis. Aenean at ornare lacus.
-              Duis imperdiet lacus justo.
-            </p>
+            <iframe src="https://realphrankquotes.web.app"></iframe> 
           </div>
         
         <div class="col-lg-4 mt-5 mt-lg-0">
@@ -223,13 +223,9 @@
             
         </div>
       </div>
-      <footer class="text-center small tm-footer">
-          <p class="mb-0">
-            Copyright &copy; 2019 Company Name 
-            
-            - Design: <a rel="nofollow" href="https://templatemo.com" class="tm-footer-link">Template Mo</a>
-          </p>
-        </footer>
+      <div class="loader">
+          <span>{</span><span>}</span>
+        </div>
     </section>
     <script src="js/jquery-1.9.1.min.js"></script>     
     <script src="slick/slick.min.js"></script>
@@ -237,6 +233,10 @@
     <script src="js/jquery.singlePageNav.min.js"></script>     
     <script src="js/bootstrap.min.js"></script> 
     <script>
+
+      $(window).on("load",function(){
+        $(".loader").fadeOut("slow");
+      });
 
       function getOffSet(){
         var _offset = 450;
