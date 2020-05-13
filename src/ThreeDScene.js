@@ -58,8 +58,8 @@ class ThreeDScene extends React.Component {
     //document.body.appendChild(renderer.domElement)
 
     //asccii effect
-    const effect = new AsciiEffect(renderer, " .:-=+*#%@", {
-      invert: true,
+    const effect = new AsciiEffect(renderer, " .:-=+*#% ", {
+      invert: false,
     });
     effect.setSize(window.innerWidth - 50, window.innerHeight);
     effect.domElement.style.color = "green";
