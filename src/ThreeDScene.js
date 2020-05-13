@@ -58,14 +58,13 @@ class ThreeDScene extends React.Component {
     //document.body.appendChild(renderer.domElement)
 
     //asccii effect
-    const effect = new AsciiEffect(renderer, " .,:;~|iI+h&03#`@", {
-      invert: invert,
+    const effect = new AsciiEffect(renderer, " .:-=+*#%@", {
+      invert: true,
     });
     effect.setSize(window.innerWidth - 50, window.innerHeight);
     effect.domElement.style.color = "green";
     effect.domElement.style.backgroundColor = "black";
 
-    //document.body.appendChild( effect.domElement );
     this.mount.appendChild(effect.domElement);
     // Load 3D Model
 
