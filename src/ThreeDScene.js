@@ -94,11 +94,8 @@ class ThreeDScene extends React.Component {
       modelContainer.rotation.y =
         2 * ((e.clientX / window.innerWidth) * 0.8 - 1);
     }
-    function mouseclick(e) {
-      invert = false;
-    }
+
     this.mount.addEventListener("mousemove", mousemove);
-    this.mount.addEventListener("mouseclick", mouseclick);
 
     // Handle Window Resize
 
