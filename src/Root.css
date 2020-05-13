@@ -1,0 +1,75 @@
+@media (min-width: 320px) and (max-width: 480px) {
+  body #projects {
+    font-size: large;
+    color: white;
+    position: absolute;
+    top: 10vh;
+    left: 5vw;
+    width: 60px;
+    z-index: 100;
+    display: block;
+  }
+  body #resume {
+    font-size: large;
+    color: white;
+    position: absolute;
+    top: 10vh;
+    right: 5vw;
+    width: 60px;
+    z-index: 100;
+    display: block;
+  }
+}
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  body #projects {
+    font-size: x-large;
+    display: flex;
+    color: white;
+    position: absolute;
+    top: 40vh;
+    left: 20vh;
+    width: 60px;
+    z-index: 100;
+    display: block;
+  }
+
+  body #resume {
+    font-size: x-large;
+    color: white;
+    position: absolute;
+    top: 40vh;
+    left: 80vw;
+    width: 60px;
+    z-index: 100;
+    display: block;
+  }
+}
+
+div {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
+}
+section {
+}
+#projects:hover {
+  color: green;
+}
+#resume:hover {
+  color: green;
+}
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

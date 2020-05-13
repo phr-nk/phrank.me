@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display:flex;
+  animation: fadeIn 10s ease-in;
+  opacity: 0;
 }
 
 .App-logo {
@@ -27,12 +30,8 @@
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes fade-in {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
 }
+
