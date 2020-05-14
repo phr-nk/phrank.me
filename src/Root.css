@@ -1,3 +1,9 @@
+:root {
+  -paused: paused;
+  --loading: running;
+  --animationname: fadeInOpacity;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   body #projects {
     font-size: large;
@@ -9,7 +15,7 @@
     z-index: 100;
     display: block;
   }
-  body #resume {
+  body .resume {
     font-size: large;
     color: white;
     position: absolute;
@@ -36,40 +42,143 @@
     width: 60px;
     z-index: 100;
     display: block;
+    animation-name: glitch;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-play-state: var(--loading);
   }
 
-  body #resume {
+  body .resume {
     font-size: x-large;
     color: white;
     position: absolute;
+    opacity: 1;
     top: 40vh;
     left: 80vw;
     width: 60px;
     z-index: 100;
     display: block;
+    opacity: 1;
+    animation-name: glitch;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 2s;
+    animation-play-state: var(--loading);
   }
 }
 
-div {
+.resume:hover,
+#projects:hover {
+  opacity: 1;
+  animation: glitch 0.85s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+
+#threescene {
   opacity: 1;
   animation-name: fadeInOpacity;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 2s;
 }
-section {
+#title {
+  opacity: 1;
+  animation-name: glitch;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 2s;
 }
-#projects:hover {
-  color: green;
-}
-#resume:hover {
-  color: green;
-}
+
 @keyframes fadeInOpacity {
   0% {
     opacity: 0;
+    transform: scale(0.01);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes loaded {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes glitch {
+  5% {
+    text-shadow: 3px 3px green, -2px -2px cyan;
+    text-decoration: underline;
+  }
+  10% {
+    text-shadow: -3px -3px green, 2px 2px cyan;
+    text-decoration: none;
+  }
+  15% {
+    text-shadow: -4px -3px red, 4px 2px blue;
+  }
+  20% {
+    text-shadow: 3px 3px green, -2px -2px cyan;
+  }
+  25% {
+    text-shadow: -3px -3px green, 2px 2px green;
+    color: black;
+  }
+  30% {
+    text-shadow: 3px 3px green, -2px -2px cyan;
+  }
+  35% {
+    text-shadow: -1px -1px white, 1px 1px white;
+    color: black;
+  }
+  40% {
+    text-shadow: -6px -3px green, 6px 2px cyan;
+    color: white;
+  }
+  45% {
+    text-shadow: -5px -3px green, 5px 2px cyan;
+
+    text-decoration: underline;
+  }
+  50% {
+    text-shadow: -3px -3px green, 3px 2px cyan;
+
+    text-decoration: none;
+  }
+  55% {
+    text-shadow: -5px -3px green, 5px 2px yellow;
+  }
+  60% {
+    text-shadow: -0px -3px purple, 0px 2px cyan;
+  }
+  65% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+  70% {
+    text-shadow: 2px 0px green, 2x 0px cyan;
+    text-decoration: line-through;
+  }
+  75% {
+    text-shadow: 0px 8px green, 0px 8px cyan;
+    text-decoration: none;
+  }
+  80% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+  85% {
+    text-shadow: -4px 0px purple, -9px 0px yellow;
+    text-decoration: overline;
+  }
+  90% {
+    text-shadow: 0px -5px green, 0px -4px cyan;
+    text-decoration: none;
+  }
+  95% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+  100% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
   }
 }
