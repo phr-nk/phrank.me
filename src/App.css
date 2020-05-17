@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  display:flex;
+  display: flex;
   animation: fadeIn 10s ease-in;
   opacity: 0;
 }
@@ -31,7 +31,10 @@
   color: #61dafb;
 }
 @keyframes fade-in {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
-

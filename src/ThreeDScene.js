@@ -55,10 +55,8 @@ class ThreeDScene extends React.Component {
     const renderer = new THREE.WebGLRenderer();
     //renderer.setSize(window.innerWidth, window.innerHeight)
 
-    //document.body.appendChild(renderer.domElement)
-
     //asccii effect
-    const effect = new AsciiEffect(renderer, " .:-=+*#% ", {
+    const effect = new AsciiEffect(renderer, " .:-=+*10 ", {
       invert: false,
     });
     effect.setSize(window.innerWidth - 50, window.innerHeight);
