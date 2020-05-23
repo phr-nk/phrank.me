@@ -1,3 +1,8 @@
+
+![intro](https://github.com/phr-nk/phrank.me/blob/master/src/assets/intro.gif)
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
