@@ -1,27 +1,35 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6870a5788af3e4f1384f28fff8bde49c",
+    "revision": "2ce0ac079e511df743c8468d1ba16399",
     "url": "/index.html"
   },
   {
-    "revision": "d142bf4b379a08763061",
-    "url": "/static/css/main.6d36b301.chunk.css"
+    "revision": "3f02bf6083d6c01dade3",
+    "url": "/static/css/main.08af1700.chunk.css"
   },
   {
-    "revision": "799afa7081f080f92251",
-    "url": "/static/js/2.f9eba0e2.chunk.js"
+    "revision": "6ff4116c6ed44127b871",
+    "url": "/static/js/2.ae8f144f.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/static/js/2.f9eba0e2.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.ae8f144f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d142bf4b379a08763061",
-    "url": "/static/js/main.5bfe3dc0.chunk.js"
+    "revision": "3f02bf6083d6c01dade3",
+    "url": "/static/js/main.d8dbf2d6.chunk.js"
   },
   {
     "revision": "e9917f1ef534fb305278",
     "url": "/static/js/runtime-main.4649510f.js"
+  },
+  {
+    "revision": "b895373cb94a49e8da27e945e68b5f82",
+    "url": "/static/media/Frank_Lenoci_Resume_2020_P.b895373c.pdf"
+  },
+  {
+    "revision": "620abc4ef283f67bfc3ecd69660110fd",
+    "url": "/static/media/face.620abc4e.png"
   },
   {
     "revision": "62c119da233402541445cee14c9f9d2b",
