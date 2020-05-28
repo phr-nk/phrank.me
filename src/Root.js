@@ -3,6 +3,7 @@ import ThreeDScene from "./ThreeDScene";
 import "./Root.css";
 import Fade from "react-reveal/Fade";
 import About from "./About";
+var pdf = require("./assets/Frank_Lenoci_Resume_2020_P.pdf");
 
 class Root extends React.Component {
   constructor(props) {
@@ -16,15 +17,23 @@ class Root extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div id="rootmain">
         <h1 id="title">Hi, I'm Frank Lenoci </h1>{" "}
-        <div id="projects">Projects</div> <div class="resume">Resume</div>
+        <a href="" id="projects">
+          Projects
+        </a>{" "}
+        <a class="resume" href="#pdf">
+          Resume
+        </a>
         <section id="threescene">
           {" "}
           <ThreeDScene />{" "}
         </section>
         <Fade right>
           <About></About>
+        </Fade>
+        <Fade left>
+          <iframe id="pdf" src={pdf}></iframe>
         </Fade>
       </div>
     );

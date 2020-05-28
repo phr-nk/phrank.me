@@ -45,10 +45,10 @@
 }
 /* 
   ##Device = Desktops
-  ##Screen = 1281px to higher resolution desktops
+  ##Screen = 1000px to higher resolution desktops
 */
 
-@media (min-width: 1281px) {
+@media (min-width: 1000px) {
   body #projects {
     font-size: x-large;
     display: flex;
@@ -83,6 +83,12 @@
     animation-duration: 2s;
     animation-play-state: var(--loading);
   }
+  #pdf {
+    width: 70vw;
+    height: 90vh;
+    margin-left: 15vw;
+    margin-top: 10vw;
+  }
 }
 
 .resume:hover,
@@ -106,6 +112,9 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
   animation-duration: 2s;
+}
+#rootmain {
+  vertical-align: middle;
 }
 
 @keyframes fadeInOpacity {

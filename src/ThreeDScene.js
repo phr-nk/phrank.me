@@ -38,16 +38,16 @@ class ThreeDScene extends React.Component {
 
     // Add Point Lights
 
-    const backLight = new THREE.PointLight(0x22fcd5, 3, 20);
-    backLight.position.set(-5, 5, -5);
+    const backLight = new THREE.PointLight(0x22fcd5, 3, 25);
+    backLight.position.set(-5, 10, -5);
     mainScene.add(backLight);
 
     const fillLight = new THREE.PointLight(0x22fcd5, 0.7, 20);
-    fillLight.position.set(-5, 10, 5);
+    fillLight.position.set(0, 10, 5);
     mainScene.add(fillLight);
 
-    const keyLight = new THREE.PointLight(0x22fcd5, 2, 20);
-    keyLight.position.set(5, 0, 0);
+    const keyLight = new THREE.PointLight(0x22fcd5, 2, 2);
+    keyLight.position.set(5, 0, 1);
     mainScene.add(keyLight);
 
     // Create Renderer
