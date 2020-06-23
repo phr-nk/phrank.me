@@ -84,10 +84,13 @@
     animation-play-state: var(--loading);
   }
   #pdf {
+    display: block;
     width: 70vw;
-    height: 90vh;
-    margin-left: 15vw;
-    margin-top: 10vw;
+    height: 100vh;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
   }
 }
 
