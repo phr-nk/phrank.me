@@ -4,7 +4,7 @@
   --animationname: fadeInOpacity;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 200px) and (max-width: 480px) {
   body #projects {
     font-size: large;
     color: white;
@@ -42,13 +42,22 @@
     animation-timing-function: ease-in;
     animation-duration: 2s;
   }
+  #pdf {
+    display: block;
+    width: 90vw;
+    height: 100vh;
+
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10vh;
+  }
 }
 /* 
   ##Device = Desktops
   ##Screen = 1000px to higher resolution desktops
 */
 
-@media (min-width: 1000px) {
+@media (min-width: 600px) {
   body #projects {
     font-size: x-large;
     display: flex;
@@ -59,11 +68,11 @@
     width: 60px;
     z-index: 100;
     display: block;
-    animation-name: glitch;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    animation-play-state: var(--loading);
+    animation-name: glitch, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in,ease;
+    animation-duration: 2s,2s;
+    animation-direction: alternate;
   }
 
   body .resume {
@@ -77,11 +86,11 @@
     z-index: 100;
     display: block;
     opacity: 1;
-    animation-name: glitch;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    animation-play-state: var(--loading);
+    animation-name: glitch, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in,ease;
+    animation-duration: 2s,2s;
+    animation-direction: alternate;
   }
   #pdf {
     display: block;
@@ -120,6 +129,16 @@
   vertical-align: middle;
 }
 
+@keyframes floating 
+{
+  0% {  
+    transform: translateY(.2em);
+
+
+  }
+
+
+}
 @keyframes fadeInOpacity {
   0% {
     opacity: 0;
@@ -221,3 +240,4 @@
     text-shadow: 0px 0px green, 0px 0px cyan;
   }
 }
+

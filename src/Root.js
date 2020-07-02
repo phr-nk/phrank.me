@@ -4,6 +4,7 @@ import "./Root.css";
 import Fade from "react-reveal/Fade";
 import About from "./About";
 import Project from "./Project";
+import Contact from "./Contact"
 import fetchProjects from "./api/apiProjects";
 var pdf = require("./assets/Frank_Lenoci_Resume_2020_P.pdf");
 
@@ -45,6 +46,9 @@ class Root extends React.Component {
         <Fade left></Fade>
         <Fade left>
           <iframe id="pdf" src={pdf}></iframe>
+        </Fade>
+        <Fade bottom>
+          <Contact></Contact>
         </Fade>
       </div>
     );

@@ -8,6 +8,8 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
 import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
 import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
+import { DotScreenPass } from "three/examples/jsm/postprocessing/DotScreenPass";
+import { OutlinePass } from "three/examples/jsm/postprocessing/OutlinePass";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass";
 
@@ -51,7 +53,7 @@ class ThreeDScene extends React.Component {
     backLight.position.set(0, 2, 0);
     mainScene.add(backLight);
 
-    const fillLight = new THREE.PointLight(0x0ee3ff, 0.9, 20);
+    const fillLight = new THREE.PointLight(0x0ee3ff, 1.5, 20);
     fillLight.layers.enable(OCCLUSION_LAYER);
     fillLight.position.set(0, -0.9, 0);
     mainScene.add(fillLight);
@@ -248,7 +250,7 @@ class ThreeDScene extends React.Component {
     composer.addPass(new RenderPass(mainScene, mainCamera));
 
     const filmPass = new FilmPass(0.6, 0.025, 648, false);
-    composer.addPass(filmPass);
+    //composer.addPass(filmPass);
 
     const afterimagePass = new AfterimagePass();
     afterimagePass.uniforms["damp"].value = 0.89;
@@ -256,6 +258,14 @@ class ThreeDScene extends React.Component {
 
     const glitchPass = new GlitchPass();
     //composer.addPass(glitchPass);
+
+    const dotPass = new DotScreenPass();
+    composer.addPass(dotPass)
+
+    
+
+  
+
 
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight),
