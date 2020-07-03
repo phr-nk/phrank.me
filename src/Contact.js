@@ -9,10 +9,10 @@ function Contact()
         <div>
             <h1>CONTACT</h1>
             <div id="icon_container"> 
-            <img  class="icon" src={github}></img>
-           <img  class="icon" src={gmail}></img>
-           <img  class="icon" src={linkedin}></img> 
-        </div>
+               <a class="icon" href="https://github.com/phr-nk"> <img class="icon" alt="github"  src={github}></img> </a>
+               <a class="icon" href="mailto:frank.c.lenoci@gmail.com" ><img  alt="gmail"class="icon" src={gmail}></img> </a>
+               <a class="icon" href="https://www.linkedin.com/in/frank-lenoci/" > <img  alt="linkedin" class="icon" src={linkedin}></img> </a>
+            </div>
         </div>
     )
 }

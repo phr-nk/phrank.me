@@ -34,8 +34,9 @@
 p {
   color: white;
   text-align: left;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70vw;
   outline: solid;
   font-size: larger;
   font-family: "Courier New", Courier, monospace;
