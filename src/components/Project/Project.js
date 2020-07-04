@@ -1,8 +1,8 @@
 import React from "react";
-
-const Project = ({ project, onClick }) => {
+import "./Project.css";
+const Project = ({ project }) => {
   return (
-    <div className="project-card" onClick={onClick}>
+    <div className="project-card">
       <img className="project-image" alt="project.name" src={project.img} />
 
       <div className="project-text">

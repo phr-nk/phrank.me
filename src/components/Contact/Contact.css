@@ -1,0 +1,12 @@
+.icon
+{
+    height:20vh;
+    margin: 1rem auto;
+
+}
+#icon_container
+{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}

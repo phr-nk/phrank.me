@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import ThreeDScene from "./ThreeDScene";
 import * as serviceWorker from "./serviceWorker";
-import Root from "./Root";
+import Root from "./components/Root/Root";
 
 ReactDOM.render(
   <div>

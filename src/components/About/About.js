@@ -1,13 +1,13 @@
 import React from "react";
 import "./About.css";
 
-var face = require("./assets/face.png");
+var face = require("../../assets/face.png");
 
 class About extends React.Component {
   render() {
     return (
       <div id="main">
-        <h1 id="about">About Me: </h1>;<img id="face" src={face}></img>
+        <h1 id="about">About Me: </h1>
         <p>
           I am a recent graduate from DePaul University with a Bachelor's of
           Science degree in Computer Science. I have about 4 and a half years of

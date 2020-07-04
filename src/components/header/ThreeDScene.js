@@ -1,26 +1,20 @@
 import React from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import "./App.css";
 
 import { EffectComposer } from "three/examples/jsm/postprocessing/EffectComposer";
 import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
 import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
 import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
+import { DotScreenPass } from "three/examples/jsm/postprocessing/DotScreenPass";
+import { OutlinePass } from "three/examples/jsm/postprocessing/OutlinePass";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass";
 
-import RippleShader from "./shaders/Ripple";
+import RippleShader from "../../shaders/Ripple";
 
-import { AsciiEffect } from "./shaders/AsciiEffect";
-
-import ASCIIShader from "./shaders/ASCII";
-import ScanShader from "./shaders/Scan";
-import AdditiveShader from "./shaders/Additive";
-import VolumetricLightScattering from "./shaders/VolumetricLightScattering";
-import VolumetricLightCylinder from "./shaders/VolumetricLightCylinder";
-import VertexLitParticle from "./shaders/VertexLitParticle";
+import { AsciiEffect } from "../../shaders/AsciiEffect";
 
 class ThreeDScene extends React.Component {
   // Create Scene + Camera
@@ -51,7 +45,7 @@ class ThreeDScene extends React.Component {
     backLight.position.set(0, 2, 0);
     mainScene.add(backLight);
 
-    const fillLight = new THREE.PointLight(0x0ee3ff, 0.9, 20);
+    const fillLight = new THREE.PointLight(0x0ee3ff, 1.5, 20);
     fillLight.layers.enable(OCCLUSION_LAYER);
     fillLight.position.set(0, -0.9, 0);
     mainScene.add(fillLight);
@@ -215,7 +209,7 @@ class ThreeDScene extends React.Component {
     // ASCII Effect
 
     const fontLoader = new THREE.TextureLoader();
-    const fontFile = require("./assets/font.png");
+    const fontFile = require("../../assets/font.png");
     const tFont = fontLoader.load(fontFile);
     tFont.minFilter = THREE.NearestFilter;
     tFont.magFilter = THREE.NearestFilter;
@@ -248,14 +242,17 @@ class ThreeDScene extends React.Component {
     composer.addPass(new RenderPass(mainScene, mainCamera));
 
     const filmPass = new FilmPass(0.6, 0.025, 648, false);
-    composer.addPass(filmPass);
+    //composer.addPass(filmPass);
 
     const afterimagePass = new AfterimagePass();
-    afterimagePass.uniforms["damp"].value = 0.89;
+    afterimagePass.uniforms["damp"].value = 0.98;
     composer.addPass(afterimagePass);
 
     const glitchPass = new GlitchPass();
     //composer.addPass(glitchPass);
+
+    const dotPass = new DotScreenPass();
+    composer.addPass(dotPass);
 
     const bloomPass = new UnrealBloomPass(
       new THREE.Vector2(window.innerWidth, window.innerHeight),
@@ -264,7 +261,7 @@ class ThreeDScene extends React.Component {
       0.85
     );
     bloomPass.threshold = 0.25;
-    bloomPass.strength = 1.8;
+    bloomPass.strength = 2;
     bloomPass.radius = 0.2;
 
     composer.addPass(bloomPass);

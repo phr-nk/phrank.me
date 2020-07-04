@@ -1,20 +1,19 @@
 import React from "react";
-import ThreeDScene from "./ThreeDScene";
+import ThreeDScene from "../header/ThreeDScene";
 import "./Root.css";
 import Fade from "react-reveal/Fade";
-import About from "./About";
-import Project from "./Project";
-import fetchProjects from "./api/apiProjects";
-var pdf = require("./assets/Frank_Lenoci_Resume_2020_P.pdf");
+import About from "../About/About";
+import Project from "../Project/Project";
+import Contact from "../Contact/Contact";
+import fetchProjects from "../../api/apiProjects";
+var pdf = require("../../assets/Frank_Lenoci_Resume_2020_P.pdf");
 
 class Root extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { loaded: false, projects: null };
+    this.state = { projects: null };
   }
   componentDidMount() {
-    let root = document.getElementsByTagName("html")[0];
-    root.style.setProperty("--animationname", "loaded");
     this.setState({ loaded: true });
     this.fetchData();
   }
@@ -29,6 +28,7 @@ class Root extends React.Component {
     return (
       <div id="rootmain">
         <h1 id="title">Hi, I'm Frank Lenoci </h1>{" "}
+        <h2 id="subtitle">Click Anywhere Below for Ripple Effect </h2>
         <a href="" id="projects">
           Projects
         </a>{" "}
@@ -45,6 +45,9 @@ class Root extends React.Component {
         <Fade left></Fade>
         <Fade left>
           <iframe id="pdf" src={pdf}></iframe>
+        </Fade>
+        <Fade bottom>
+          <Contact></Contact>
         </Fade>
       </div>
     );
