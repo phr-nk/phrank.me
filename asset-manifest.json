@@ -1,25 +1,28 @@
 {
   "files": {
-    "main.css": "/static/css/main.1b73fb8c.chunk.css",
-    "main.js": "/static/js/main.abf2ef83.chunk.js",
-    "main.js.map": "/static/js/main.abf2ef83.chunk.js.map",
+    "main.css": "/static/css/main.9f97bebf.chunk.css",
+    "main.js": "/static/js/main.3563fa32.chunk.js",
+    "main.js.map": "/static/js/main.3563fa32.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4649510f.js",
     "runtime-main.js.map": "/static/js/runtime-main.4649510f.js.map",
-    "static/js/2.eba289bc.chunk.js": "/static/js/2.eba289bc.chunk.js",
-    "static/js/2.eba289bc.chunk.js.map": "/static/js/2.eba289bc.chunk.js.map",
+    "static/js/2.cfe365df.chunk.js": "/static/js/2.cfe365df.chunk.js",
+    "static/js/2.cfe365df.chunk.js.map": "/static/js/2.cfe365df.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ad1567da03ea7156de94d77a73870acf.js": "/precache-manifest.ad1567da03ea7156de94d77a73870acf.js",
+    "precache-manifest.2fd502806c39e0f46fd3368ef615ccd0.js": "/precache-manifest.2fd502806c39e0f46fd3368ef615ccd0.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.1b73fb8c.chunk.css.map": "/static/css/main.1b73fb8c.chunk.css.map",
-    "static/js/2.eba289bc.chunk.js.LICENSE.txt": "/static/js/2.eba289bc.chunk.js.LICENSE.txt",
-    "static/media/Frank_Lenoci_Resume_2020_P.pdf": "/static/media/Frank_Lenoci_Resume_2020_P.b895373c.pdf",
+    "static/css/main.9f97bebf.chunk.css.map": "/static/css/main.9f97bebf.chunk.css.map",
+    "static/js/2.cfe365df.chunk.js.LICENSE.txt": "/static/js/2.cfe365df.chunk.js.LICENSE.txt",
+    "static/media/Frank_Lenoci_Resume_2020_P.pdf": "/static/media/Frank_Lenoci_Resume_2020_P.ca3e1023.pdf",
     "static/media/face.png": "/static/media/face.620abc4e.png",
-    "static/media/index.css": "/static/media/hacked-kerx-webfont.a3554bee.woff2"
+    "static/media/github_icon.png": "/static/media/github_icon.31b44d61.png",
+    "static/media/gmail_icon.png": "/static/media/gmail_icon.6e2e7e64.png",
+    "static/media/index.css": "/static/media/hacked-kerx-webfont.a3554bee.woff2",
+    "static/media/linkedin_icon.png": "/static/media/linkedin_icon.8b0cf889.png"
   },
   "entrypoints": [
     "static/js/runtime-main.4649510f.js",
-    "static/js/2.eba289bc.chunk.js",
-    "static/css/main.1b73fb8c.chunk.css",
-    "static/js/main.abf2ef83.chunk.js"
+    "static/js/2.cfe365df.chunk.js",
+    "static/css/main.9f97bebf.chunk.css",
+    "static/js/main.3563fa32.chunk.js"
   ]
 }
