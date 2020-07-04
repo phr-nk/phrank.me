@@ -8,7 +8,7 @@ export default async function fetchProjects() {
         description: "iOS app created for my class at depaul",
         links: [{ url: "https://github.com/phr-nk/CommuterChronicles" }],
         img:
-          "https://github.com/phr-nk/CommuterChronicles/blob/master/MapQuest/Assets.xcassets/appview1.png",
+          "https://raw.githubusercontent.com/phr-nk/CommuterChronicles/master/MapQuest/Assets.xcassets/appview1.png",
       },
       {
         id: "NYT",
@@ -23,7 +23,7 @@ export default async function fetchProjects() {
           },
         ],
         img:
-          "https://github.com/ckleinvehn/CSC360-Final/blob/master/src/images/nyt-logo.jpg",
+          "https://raw.githubusercontent.com/ckleinvehn/CSC360-Final/master/src/images/nyt-logo.jpeg",
       },
       {
         id: "Sudoku",
@@ -33,11 +33,11 @@ export default async function fetchProjects() {
         links: [
           {
             githubUrl: "https://github.com/phr-nk/ReactSudoku",
-            url: "https://github.com/phr-nk/ReactSudoku",
+            url: "https://phr-nk.github.io/ReactSudoku/",
           },
         ],
         img:
-          "https://github.com/phr-nk/ReactSudoku/blob/master/public/notcompleted.PNG",
+          "https://raw.githubusercontent.com/phr-nk/ReactSudoku/master/public/notcompleted.PNG",
       },
     ])
   );

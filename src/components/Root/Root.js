@@ -25,32 +25,54 @@ class Root extends React.Component {
   };
   render() {
     console.log(this.state.projects);
-    return (
-      <div id="rootmain">
-        <h1 id="title">Hi, I'm Frank Lenoci </h1>{" "}
-        <h2 id="subtitle">Click Anywhere Below for Ripple Effect </h2>
-        <a href="" id="projects">
-          Projects
-        </a>{" "}
-        <a class="resume" href="#pdf">
-          Resume
-        </a>
-        <section id="threescene">
-          {" "}
-          <ThreeDScene />{" "}
-        </section>
-        <Fade right>
-          <About></About>
-        </Fade>
-        <Fade left></Fade>
-        <Fade left>
-          <iframe id="pdf" src={pdf}></iframe>
-        </Fade>
-        <Fade bottom>
-          <Contact></Contact>
-        </Fade>
-      </div>
-    );
+    if (this.state.projects === null) {
+      return (
+        <div id="rootmain">
+          <h1>LOADING</h1>
+        </div>
+      );
+    } else {
+      return (
+        <div id="rootmain">
+          <h1 id="title">Hi, I'm Frank Lenoci </h1>{" "}
+          <h2 id="subtitle">Click Anywhere Below for Ripple Effect </h2>
+          <a href="#projectgrid" id="projects">
+            Projects
+          </a>{" "}
+          <a class="resume" href="#pdf">
+            Resume
+          </a>
+          <section id="threescene">
+            {" "}
+            <ThreeDScene />{" "}
+          </section>
+          <Fade right>
+            <About></About>
+          </Fade>
+          <Fade right>
+            <div id="projectgrid">
+              {this.state.projects.map((value, index) => {
+                return (
+                  <Project
+                    name={this.state.projects[index].name}
+                    img={this.state.projects[index].img}
+                    subtitle={this.state.projects[index].subtitle}
+                    link={this.state.projects[index].links[0].url}
+                  ></Project>
+                );
+              })}
+            </div>
+          </Fade>
+          <Fade left></Fade>
+          <Fade left>
+            <iframe id="pdf" src={pdf}></iframe>
+          </Fade>
+          <Fade bottom>
+            <Contact></Contact>
+          </Fade>
+        </div>
+      );
+    }
   }
 }
 export default Root;

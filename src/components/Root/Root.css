@@ -127,6 +127,9 @@
 #rootmain {
   vertical-align: middle;
 }
+#projectgrid {
+  height: 100vh;
+}
 
 @keyframes floating {
   0% {

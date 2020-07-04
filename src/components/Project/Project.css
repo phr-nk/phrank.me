@@ -1,17 +1,26 @@
 .project-card {
   height: 256px;
-
+  width: 70vw;
   position: relative;
-
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 4px;
   overflow: hidden;
 
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.32), 0 3px 4px rgba(0, 0, 0, 0.34);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-
+.project-text {
+  text-decoration-color: white;
+  box-shadow: 0 12px 28px white, 0 8px 10px white;
+  background-color: grey;
+  border-style: none;
+}
+.project-title {
+  color: white;
+  font-size: large;
+}
 .project-card:hover {
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25), 0 8px 10px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 12px 28px white, 0 8px 10px white;
 }
 .project-image {
   width: 100%;
