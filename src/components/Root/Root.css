@@ -1,48 +1,42 @@
-:root {
-  -paused: paused;
-  --loading: running;
-  --animationname: fadeInOpacity;
-}
-
 @media (min-width: 200px) and (max-width: 480px) {
   body #projects {
     font-size: large;
     color: white;
     position: absolute;
-    top: 10vh;
+    top: 20vh;
     left: 5vw;
     width: 60px;
-    z-index: 100;
-    display: block;
-    animation-name: glitch;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    animation-play-state: var(--loading);
+
+    animation-name: glitch, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
+    animation-direction: alternate;
   }
   body .resume {
     font-size: large;
     color: white;
     position: absolute;
-    top: 10vh;
+    top: 20vh;
     right: 5vw;
     width: 60px;
-    z-index: 100;
-    display: block;
-    animation-name: glitch;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in;
-    animation-duration: 2s;
-    animation-play-state: var(--loading);
+
+    animation-name: glitch, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
+    animation-direction: alternate;
   }
   body #threescene {
     transform: scale(0.7);
+    display: flex;
     animation-name: fadeInOpacityMobile;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
   }
-  #pdf {
+
+  body #pdf {
     display: block;
     width: 90vw;
     height: 100vh;
@@ -70,8 +64,8 @@
     display: block;
     animation-name: glitch, floating;
     animation-iteration-count: 1, infinite;
-    animation-timing-function: ease-in,ease;
-    animation-duration: 2s,2s;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
 
@@ -88,8 +82,8 @@
     opacity: 1;
     animation-name: glitch, floating;
     animation-iteration-count: 1, infinite;
-    animation-timing-function: ease-in,ease;
-    animation-duration: 2s,2s;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
   #pdf {
@@ -102,7 +96,12 @@
     margin-top: 10vh;
   }
 }
-
+#subtitle {
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 6s;
+}
 .resume:hover,
 #projects:hover {
   opacity: 1;
@@ -129,15 +128,10 @@
   vertical-align: middle;
 }
 
-@keyframes floating 
-{
-  0% {  
-    transform: translateY(.2em);
-
-
+@keyframes floating {
+  0% {
+    transform: translateY(0.3rem);
   }
-
-
 }
 @keyframes fadeInOpacity {
   0% {
@@ -147,6 +141,14 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 @keyframes fadeInOpacityMobile {
@@ -240,4 +242,3 @@
     text-shadow: 0px 0px green, 0px 0px cyan;
   }
 }
-

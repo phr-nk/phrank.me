@@ -1,16 +1,17 @@
 @media (min-width: 200px) and (max-width: 480px) {
   body p {
-    margin-left: 1rem;
-    margin-right: 1rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     font-size: large;
+    width: 90vw;
   }
-  #face{
+  #face {
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
 }
-
 
 #main {
   display: flex;
@@ -23,13 +24,12 @@
   margin-bottom: -1rem;
 }
 #face {
-  height:80vh;
+  height: 80vh;
 
   display: block;
 
   margin-left: auto;
   margin-right: auto;
-
 }
 p {
   color: white;
@@ -37,8 +37,9 @@ p {
   margin-left: auto;
   margin-right: auto;
   width: 70vw;
-  outline: solid;
+
   font-size: larger;
   font-family: "Courier New", Courier, monospace;
-  border-style: double;
+  border-style: groove;
+  border-radius: 0.5rem;
 }
