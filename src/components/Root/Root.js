@@ -36,7 +36,7 @@ class Root extends React.Component {
         <div id="rootmain">
           <h1 id="title">Hi, I'm Frank Lenoci </h1>{" "}
           <h2 id="subtitle">Click Anywhere Below for Ripple Effect </h2>
-          <a href="#projectgrid" id="projects">
+          <a href="#projectsection" id="projects">
             Projects
           </a>{" "}
           <a class="resume" href="#pdf">
