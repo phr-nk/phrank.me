@@ -13,15 +13,13 @@
   }
 }
 
-#main {
+#aboutcontainer {
   display: flex;
   flex-direction: column;
 }
 #about {
   color: white;
   text-align: center;
-  text-decoration: underline;
-  margin-bottom: -1rem;
 }
 #face {
   height: 80vh;

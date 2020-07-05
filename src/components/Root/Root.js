@@ -50,21 +50,25 @@ class Root extends React.Component {
             <About></About>
           </Fade>
           <Fade right>
-            <div id="projectgrid">
-              {this.state.projects.map((value, index) => {
-                return (
-                  <Project
-                    name={this.state.projects[index].name}
-                    img={this.state.projects[index].img}
-                    subtitle={this.state.projects[index].subtitle}
-                    link={this.state.projects[index].links[0].url}
-                  ></Project>
-                );
-              })}
+            <div id="projectsection">
+              <h1>PROJECTS</h1>
+              <div id="projectcontainer">
+                {this.state.projects.map((value, index) => {
+                  return (
+                    <Project
+                      name={this.state.projects[index].name}
+                      img={this.state.projects[index].img}
+                      subtitle={this.state.projects[index].subtitle}
+                      link={this.state.projects[index].links[0].url}
+                    ></Project>
+                  );
+                })}
+              </div>
             </div>
           </Fade>
           <Fade left></Fade>
           <Fade left>
+            <h1>RESUME</h1>
             <iframe id="pdf" src={pdf}></iframe>
           </Fade>
           <Fade bottom>

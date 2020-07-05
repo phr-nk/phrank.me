@@ -1,6 +1,6 @@
 .project-card {
   height: 256px;
-  width: 70vw;
+  width: 20vw;
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -10,13 +10,27 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 .project-text {
-  text-decoration-color: white;
-  box-shadow: 0 12px 28px white, 0 8px 10px white;
-  background-color: grey;
-  border-style: none;
+  position: absolute;
+  bottom: 0;
+  outline: thick;
+  left: 0;
+  width: 100%;
+  padding: 0px;
+  background: inherit;
+  background-attachment: fixed;
+  overflow: hidden;
 }
+
 .project-title {
-  color: white;
+  color: black;
+  background-color: lightgrey;
+
+  font-size: large;
+}
+.project-subtitle {
+  color: black;
+  background-color: lightgrey;
+
   font-size: large;
 }
 .project-card:hover {
@@ -31,5 +45,7 @@
   min-height: 100%;
 
   display: block;
+  background-attachment: fixed;
+  overflow: hidden;
   object-fit: cover;
 }

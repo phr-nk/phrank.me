@@ -127,10 +127,15 @@
 #rootmain {
   vertical-align: middle;
 }
-#projectgrid {
+#projectsection {
   height: 100vh;
+  margin-bottom: 5rem;
 }
-
+#projectcontainer {
+  vertical-align: middle;
+  display: flex;
+  flex-wrap: wrap;
+}
 @keyframes floating {
   0% {
     transform: translateY(0.3rem);
