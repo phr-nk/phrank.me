@@ -57,7 +57,7 @@ export default async function fetchProjects() {
         description: "",
         links: [{ url: "https://github.com/phr-nk/phrank.me" }],
         img:
-          "https://raw.githubusercontent.com/phr-nk/phrank.me/master/src/assets/face.png",
+          "https://raw.githubusercontent.com/phr-nk/phrank.me/master/src/assets/threedhead.png",
       },
     ])
   );
