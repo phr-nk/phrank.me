@@ -13,6 +13,8 @@
     animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
+  body #projectcontainer {
+  }
   body .resume {
     font-size: large;
     color: white;
@@ -28,8 +30,6 @@
     animation-direction: alternate;
   }
   body #threescene {
-    transform: scale(0.7);
-    display: flex;
     animation-name: fadeInOpacityMobile;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
@@ -93,14 +93,13 @@
 
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10vh;
   }
 }
 #subtitle {
   animation-name: fadeIn;
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
-  animation-duration: 6s;
+  animation-duration: 5s;
 }
 .resume:hover,
 #projects:hover {
@@ -128,7 +127,6 @@
   vertical-align: middle;
 }
 #projectsection {
-  height: 100vh;
   margin-bottom: 5rem;
 }
 #projectcontainer {

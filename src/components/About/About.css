@@ -6,11 +6,6 @@
     font-size: large;
     width: 90vw;
   }
-  #face {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 #aboutcontainer {

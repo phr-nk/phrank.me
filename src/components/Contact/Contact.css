@@ -1,12 +1,15 @@
-.icon
-{
-    height:20vh;
-    margin: 1rem auto;
-
+@media (min-width: 200px) and (max-width: 480px) {
+  body .icon {
+    height: 10vh;
+  }
 }
-#icon_container
-{
-    display: flex;
+
+.icon {
+  height: 20vh;
+  margin: 1rem auto;
+}
+#icon_container {
+  display: flex;
   align-items: center;
   justify-content: center;
 }
