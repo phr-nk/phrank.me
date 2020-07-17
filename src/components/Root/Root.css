@@ -29,8 +29,22 @@
     animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
+  body .contactStyle {
+    font-size: large;
+    color: white;
+    position: absolute;
+    top: 20vh;
+    right: 42vw;
+    width: 60px;
+
+    animation-name: glitch, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
+    animation-direction: alternate;
+  }
   body #threescene {
-    animation-name: fadeInOpacityMobile;
+    animation-name: fadeIn;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
     animation-duration: 2s;
@@ -86,6 +100,23 @@
     animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
+  body .contactStyle {
+    font-size: x-large;
+    color: white;
+    position: absolute;
+    opacity: 1;
+    top: 13vh;
+    left: 47vw;
+    width: 60px;
+    z-index: 100;
+    display: block;
+    opacity: 1;
+    animation-name: glitch, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
+    animation-direction: alternate;
+  }
   #pdf {
     display: block;
     width: 70vw;
@@ -101,8 +132,9 @@
   animation-timing-function: ease-in;
   animation-duration: 5s;
 }
+.contactStyle:hover,
 .resume:hover,
-#projects:hover {
+#projects:hover  {
   opacity: 1;
   animation: glitch 0.85s;
   animation-iteration-count: infinite;
@@ -157,16 +189,7 @@
     opacity: 1;
   }
 }
-@keyframes fadeInOpacityMobile {
-  0% {
-    opacity: 0;
-    transform: scale(0.01);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(0.7);
-  }
-}
+
 @keyframes loaded {
   100% {
     opacity: 1;

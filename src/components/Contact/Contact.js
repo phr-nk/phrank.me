@@ -8,16 +8,16 @@ function Contact() {
     <div>
       <h1>CONTACT</h1>
       <div id="icon_container">
-        <a class="icon" href="https://github.com/phr-nk" target= "_blank" rel="noopener noreferrer">
+        <a className="icon" href="https://github.com/phr-nk" target= "_blank" rel="noopener noreferrer">
           {" "}
-          <img class="icon" alt="github" src={github}></img>{" "}
+          <img className="icon" alt="github" src={github}></img>{" "}
         </a>
-        <a class="icon" href="mailto:frank.c.lenoci@gmail.com" target= "_blank" rel="noopener noreferrer">
-          <img alt="gmail" class="icon" src={gmail}></img>{" "}
+        <a className="icon" href="mailto:frank.c.lenoci@gmail.com" target= "_blank" rel="noopener noreferrer">
+          <img alt="gmail" className="icon" src={gmail}></img>{" "}
         </a>
-        <a class="icon" href="https://www.linkedin.com/in/frank-lenoci/" target= "_blank" rel="noopener noreferrer">
+        <a className="icon" href="https://www.linkedin.com/in/frank-lenoci/" target= "_blank" rel="noopener noreferrer">
           {" "}
-          <img alt="linkedin" class="icon" src={linkedin}></img>{" "}
+          <img alt="linkedin" className="icon" src={linkedin}></img>{" "}
         </a>
       </div>
     </div>
