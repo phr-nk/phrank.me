@@ -7,7 +7,7 @@ function Project(props) {
         <div className="project-title">{props.name}</div>
         <div className="project-subtitle">{props.subtitle}</div>
       </div>
-      <a href={props.link}>
+      <a href={props.link} target= "_blank" rel="noopener noreferrer">
         {" "}
         <img
           className="project-image"

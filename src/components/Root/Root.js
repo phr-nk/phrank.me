@@ -39,7 +39,10 @@ class Root extends React.Component {
           <a href="#projectsection" id="projects">
             Projects
           </a>{" "}
-          <a class="resume" href="#pdf">
+          <a className="contactStyle" href="#contact">
+            Contact
+          </a>
+          <a className="resume" href="#pdf">
             Resume
           </a>
           <section id="threescene">
@@ -72,7 +75,10 @@ class Root extends React.Component {
             <iframe id="pdf" src={pdf}></iframe>
           </Fade>
           <Fade bottom>
-            <Contact></Contact>
+            <div  id="contact">
+            <Contact ></Contact>
+            </div>
+    
           </Fade>
         </div>
       );
