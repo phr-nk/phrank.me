@@ -2,6 +2,15 @@ export default async function fetchProjects() {
   return new Promise((resolve, reject) =>
     resolve([
       {
+        id: "whosgoing",
+        name: "Who's Going?",
+        subtitle: "Full-stack social media site using firebase and ReactJS.",
+        description: "Full-stack social media site using firebase and ReactJS.",
+        links: [{ url: "https://whosgoing.web.app/" }],
+        img:
+          "https://raw.githubusercontent.com/phr-nk/whosgoing-frontend/master/src/images/wg_login_screen.PNG",
+      },
+      {
         id: "Commuter",
         name: "Commuter Chronicles",
         subtitle: "An iOS app developed for my iOS class at DePaul.",
