@@ -28,7 +28,7 @@ export default async function fetchProjects() {
         links: [
           {
             githubUrl: "https://github.com/ckleinvehn/CSC360-Final",
-            url: "https://csc360-final-project.herokuapp.com/",
+            url: "https://nyt-newsflash.web.app/",
           },
         ],
         img:

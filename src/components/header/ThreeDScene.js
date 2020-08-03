@@ -26,7 +26,7 @@ class ThreeDScene extends React.Component {
     const OCCLUSION_LAYER = 1;
 
     var invert = true;
-    var isRendering ; 
+    var isRendering;
     var animationFrame;
 
     const mainCamera = new THREE.PerspectiveCamera(
@@ -276,19 +276,16 @@ class ThreeDScene extends React.Component {
     // Handle Window Resize
 
     function resizeRenderer() {
-      if(window.innerWidth <= 400 )
-      {
-        rippleCanvas.width = rippleCanvas.style.width = window.innerWidth ;
+      if (window.innerWidth <= 400) {
+        rippleCanvas.width = rippleCanvas.style.width = window.innerWidth;
         rippleCanvas.height = rippleCanvas.style.height = window.innerHeight;
-        modelContainer.position.x = - 0.12;
+        modelContainer.position.x = -0.12;
         mainCamera.position.z = 15;
-        mainCamera.position.y = 0.2
-        renderer.setSize(window.innerWidth , window.innerHeight );
-        mainCamera.aspect = (window.innerWidth) / (window.innerHeight );
+        mainCamera.position.y = 0.2;
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        mainCamera.aspect = window.innerWidth / window.innerHeight;
         mainCamera.updateProjectionMatrix();
-      }
-      else
-      {
+      } else {
         rippleCanvas.width = rippleCanvas.style.width = window.innerWidth;
         rippleCanvas.height = rippleCanvas.style.height = window.innerHeight;
         renderer.setSize(window.innerWidth, window.innerHeight);
@@ -305,7 +302,7 @@ class ThreeDScene extends React.Component {
     var stopRendering = (af) => {
       cancelAnimationFrame(af);
       isRendering = false;
-  };
+    };
 
     function render() {
       const delta = clock.getDelta();
@@ -321,32 +318,34 @@ class ThreeDScene extends React.Component {
       composer.render();
 
       animationFrame = requestAnimationFrame(render);
-      isRendering = true 
+      isRendering = true;
     }
     render();
 
-    window.addEventListener('scroll', () => {
+    window.addEventListener("scroll", () => {
       var scrollPosition = window.scrollY;
-      console.log(document.getElementById('threescene').children[0].firstChild.height)
-      console.log(scrollPosition)
+      console.log(
+        document.getElementById("threescene").children[0].firstChild.height
+      );
+      console.log(scrollPosition);
       //element is almost about to be visible, time to start rendering
-      if (scrollPosition <= 0 && scrollPosition <= window.innerHeight) {
-          if (!isRendering) {
-              render();
-              console.log('render has been started');
-          } else {
-              //wait until everythingIsLoaded is true
-          }
-      //element is not visible, stop rendering
+      if (scrollPosition < window.innerHeight - 150) {
+        if (!isRendering) {
+          render();
+          console.log("render has been started");
+        } else {
+          //wait until everythingIsLoaded is true
+        }
+        //element is not visible, stop rendering
       } else {
-          //need to stop rendering here!
-          //this doesn't work, dunno how to do this
-          if (animationFrame) {
-              stopRendering(animationFrame);
-              console.log('render has been halted');
-          }
+        //need to stop rendering here!
+        //this doesn't work, dunno how to do this
+        if (animationFrame) {
+          stopRendering(animationFrame);
+          console.log("render has been halted");
+        }
       }
-  });
+    });
   }
   // === THREE.JS EXAMPLE CODE END ===
   render() {
