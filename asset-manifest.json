@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.8e1518f2.chunk.css",
+    "main.css": "/static/css/main.ee7a32d3.chunk.css",
     "main.js": "/static/js/main.88958386.chunk.js",
     "main.js.map": "/static/js/main.88958386.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.4649510f.js",
@@ -8,9 +8,9 @@
     "static/js/2.fd3e3614.chunk.js": "/static/js/2.fd3e3614.chunk.js",
     "static/js/2.fd3e3614.chunk.js.map": "/static/js/2.fd3e3614.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.d51fd994bcafcd2e31678551c9cfd4b9.js": "/precache-manifest.d51fd994bcafcd2e31678551c9cfd4b9.js",
+    "precache-manifest.c0ce36747145ea1d637b5269b396ecff.js": "/precache-manifest.c0ce36747145ea1d637b5269b396ecff.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.8e1518f2.chunk.css.map": "/static/css/main.8e1518f2.chunk.css.map",
+    "static/css/main.ee7a32d3.chunk.css.map": "/static/css/main.ee7a32d3.chunk.css.map",
     "static/js/2.fd3e3614.chunk.js.LICENSE.txt": "/static/js/2.fd3e3614.chunk.js.LICENSE.txt",
     "static/media/Frank_Lenoci_Resume_2020_P.pdf": "/static/media/Frank_Lenoci_Resume_2020_P.ca3e1023.pdf",
     "static/media/face.png": "/static/media/face.620abc4e.png",
@@ -22,7 +22,7 @@
   "entrypoints": [
     "static/js/runtime-main.4649510f.js",
     "static/js/2.fd3e3614.chunk.js",
-    "static/css/main.8e1518f2.chunk.css",
+    "static/css/main.ee7a32d3.chunk.css",
     "static/js/main.88958386.chunk.js"
   ]
 }
