@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "383a272184bbf06f0125830e03fb9fcd",
+    "revision": "d82ac7258842dbda6c21f9e0a18775ff",
     "url": "/index.html"
   },
   {
-    "revision": "06dd32c5bb40bd4291b8",
-    "url": "/static/css/main.d877faf4.chunk.css"
+    "revision": "c5cbf9eee4281de1bdf3",
+    "url": "/static/css/main.f7da1f45.chunk.css"
   },
   {
     "revision": "937c5d6752440b6d41c8",
@@ -16,16 +16,12 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/js/2.fd3e3614.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "06dd32c5bb40bd4291b8",
-    "url": "/static/js/main.88958386.chunk.js"
+    "revision": "c5cbf9eee4281de1bdf3",
+    "url": "/static/js/main.277e800f.chunk.js"
   },
   {
     "revision": "e9917f1ef534fb305278",
     "url": "/static/js/runtime-main.4649510f.js"
-  },
-  {
-    "revision": "ca3e1023ea85c8b36554eb1f8479ff0a",
-    "url": "/static/media/Frank_Lenoci_Resume_2020_P.ca3e1023.pdf"
   },
   {
     "revision": "620abc4ef283f67bfc3ecd69660110fd",
@@ -50,5 +46,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "8b0cf889fa8f30025609db5cecd9909e",
     "url": "/static/media/linkedin_icon.8b0cf889.png"
+  },
+  {
+    "revision": "a1785f047f3381da90814f4c3b274c6a",
+    "url": "/static/media/updated_resume_8_2020.a1785f04.pdf"
   }
 ]);
