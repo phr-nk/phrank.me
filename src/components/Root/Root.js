@@ -4,14 +4,17 @@ import "./Root.css";
 import Fade from "react-reveal/Fade";
 import About from "../About/About";
 import Project from "../Project/Project";
-import Contact from "../Contact/Contact";
-import fetchProjects from "../../api/apiProjects";
-var pdf = require("../../assets/Frank_Lenoci_Resume_2020_P.pdf");
 
+import Contact from "../Contact/Contact";
+
+import fetchProjects from "../../api/apiProjects";
+
+var pdf = require("../../assets/updated_resume_8_2020.pdf");
+var default_picture = require("../../assets/binary.jpg");
 class Root extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { projects: null };
+    this.state = { projects: null, isSticky: false };
   }
   componentDidMount() {
     this.setState({ loaded: true });
@@ -23,8 +26,13 @@ class Root extends React.Component {
       this.setState({ projects: data });
     });
   };
+  handleScroll = () => {
+    window.scrollY >
+    document.getElementById("title").getBoundingClientRect().bottom
+      ? this.setState({ isSticky: true })
+      : this.setState({ isSticky: false });
+  };
   render() {
-    console.log(this.state.projects);
     if (this.state.projects === null) {
       return (
         <div id="rootmain">
@@ -34,8 +42,7 @@ class Root extends React.Component {
     } else {
       return (
         <div id="rootmain">
-          <h1 id="title">Hi, I'm Frank Lenoci </h1>{" "}
-          <h2 id="subtitle">Click Anywhere Below for Ripple Effect </h2>
+          
           <a href="#projectsection" id="projects">
             Projects
           </a>{" "}
@@ -49,10 +56,14 @@ class Root extends React.Component {
             {" "}
             <ThreeDScene />{" "}
           </section>
-          <Fade right>
+          <div className="introSlide"> <h1 className="introText">Welcome to PHRANK.ME</h1>  </div>
+          <h1 id="title">Hi, I'm Frank Lenoci </h1>
+          <h2 id="subtitle">Click Anywhere Above for Ripple Effect </h2>
+          
+          <Fade bottom>
             <About></About>
           </Fade>
-          <Fade right>
+          <Fade bottom>
             <div id="projectsection">
               <h1>PROJECTS</h1>
               <div id="projectcontainer">
@@ -60,25 +71,31 @@ class Root extends React.Component {
                   return (
                     <Project
                       name={this.state.projects[index].name}
-                      img={this.state.projects[index].img}
+                      img={
+                        this.state.projects[index].img != null
+                          ? this.state.projects[index].img
+                          : default_picture
+                      }
                       subtitle={this.state.projects[index].subtitle}
-                      link={this.state.projects[index].links[0].url}
+                      url={this.state.projects[index].links[0].url}
+                      github={this.state.projects[index].links[0].githubUrl}
+                      id={this.state.projects[index].id}
                     ></Project>
                   );
                 })}
               </div>
             </div>
           </Fade>
-          <Fade left></Fade>
-          <Fade left>
+          <Fade bottom>
             <h1>RESUME</h1>
-            <iframe id="pdf" src={pdf}></iframe>
+            <iframe title="resume" id="pdf" src={pdf}></iframe>
           </Fade>
           <Fade bottom>
-            <div  id="contact">
-            <Contact ></Contact>
+            <div id="contact">
+              <Contact></Contact>
+           
+              <footer >  <h2 className="footerText"> <hr></hr>Designed and Developed by Frank Lenoci</h2></footer>
             </div>
-    
           </Fade>
         </div>
       );

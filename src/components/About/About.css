@@ -31,7 +31,7 @@ p {
   margin-left: auto;
   margin-right: auto;
   width: 70vw;
-
+  padding: 20px;
   font-size: larger;
   font-family: "Courier New", Courier, monospace;
   border-style: groove;

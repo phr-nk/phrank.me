@@ -11,8 +11,71 @@
     margin-bottom: 1rem;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   }
+  body .project-content {
+    background-color: black;
+    color: white;
+    padding-right: 5px;
+    max-width: 78vw;
+  }
+  body .project-subtitle {
+    background-color: black;
+    color: white;
+    max-width: 79vw;
+  }
+  body .projectPageImage {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-items: center;
+    width: 90vw;
+  }
+  body .projectPageContent {
+    color: white;
+    text-align: center;
+    font-size: medium;
+    font-family: "Courier New", Courier, monospace;
+    border-style: groove;
+    border-radius: 0.5rem;
+    margin-left: 10vw;
+    margin-right: 10vw;
+  }
+  body .projectPageExtraImage {
+    height: 70vh;
+    width: 90vw;
+    object-fit: cover;
+    margin: 1rem;
+  }
+}
+@media (max-width: 1800px) and (min-width: 600px) {
+  body .project-content {
+    background-color: black;
+    color: white;
+    max-width: 20vw;
+    font-size: medium;
+  }
 }
 
+.collapsible {
+  z-index: 100;
+  float: right;
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+  outline: none;
+  font-size: x-large;
+  padding-right: 5px;
+  text-decoration: dashed;
+  cursor: pointer;
+}
+.collapsible:hover {
+}
+
+.link-url {
+  color: white;
+}
 .project-card {
   height: 256px;
   width: 20vw;
@@ -27,12 +90,13 @@
   position: absolute;
   bottom: 0;
   outline: thick;
-  width: 97.8%;
+  padding: 10px;
   font-size: larger;
   font-family: "Courier New", Courier, monospace;
   overflow: hidden;
   border-style: groove;
   border-radius: 4px;
+  background-color: black;
 }
 
 .project-title {
@@ -45,8 +109,16 @@
 .project-subtitle {
   color: white;
   background-color: black;
-
+  padding-bottom: 8px;
+  width: 100%;
   font-size: large;
+}
+.project-content {
+  background-color: black;
+  color: white;
+  padding-right: 5px;
+  max-width: 20vw;
+  transition: max-height 0.2s ease-out;
 }
 .project-card:hover {
   box-shadow: 0 12px 28px white, 0 8px 10px white;
@@ -63,4 +135,64 @@
   background-attachment: fixed;
   overflow: hidden;
   object-fit: cover;
+}
+
+.projectPageTitle {
+  color: white;
+
+  text-align: center;
+  font-size: x-large;
+  margin-bottom: 1vh;
+  margin-top: 1vh;
+}
+
+.projectPageImage {
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  justify-items: center;
+  margin-bottom: 1vh;
+}
+.projectPageContent {
+  color: white;
+  text-align: center;
+  border-style: groove;
+  border-radius: 0.5rem;
+  font-size: large;
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 20vw;
+  margin-right: 20vw;
+  padding: 20px;
+}
+.projectPageLink {
+  color: white;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+.projectPageImageContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20vh;
+  flex-wrap: wrap;
+}
+.projectPageExtraImage {
+  height: 70vh;
+
+  margin: 1rem;
+}
+.iconLink {
+  width: 3vw;
+  height: 3vw;
+}
+.back-button {
+  background-color: black;
+  color: white;
+  border-style: groove;
+  border-radius: 0.4rem;
+
+  cursor: pointer;
+  margin-left: 1.5rem;
+  margin-top: 1rem;
 }

@@ -3,27 +3,40 @@
     font-size: large;
     color: white;
     position: absolute;
-    top: 20vh;
+    top: 6vh;
     left: 5vw;
     width: 60px;
 
-    animation-name: glitch, floating;
+    animation-name: glitch-original, floating;
     animation-iteration-count: 1, infinite;
     animation-timing-function: ease-in, ease;
     animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
-  body #projectcontainer {
+  body #title {
+    position: -webkit-sticky;
+    position: sticky;
+    font-size: 40px;
+    background-color: black;
+    margin-top: -30vh;
+    margin-bottom: 30vh;
+    width: 90vw;
+    top: 0;
+    left: 0vw;
+    right: 0vw;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 5;
   }
   body .resume {
     font-size: large;
     color: white;
     position: absolute;
-    top: 20vh;
+    top: 6vh;
     right: 5vw;
     width: 60px;
 
-    animation-name: glitch, floating;
+    animation-name: glitch-original, floating;
     animation-iteration-count: 1, infinite;
     animation-timing-function: ease-in, ease;
     animation-duration: 2s, 2s;
@@ -33,11 +46,11 @@
     font-size: large;
     color: white;
     position: absolute;
-    top: 20vh;
+    top: 4vh;
     right: 42vw;
     width: 60px;
 
-    animation-name: glitch, floating;
+    animation-name: glitch-original, floating;
     animation-iteration-count: 1, infinite;
     animation-timing-function: ease-in, ease;
     animation-duration: 2s, 2s;
@@ -65,7 +78,7 @@
   ##Screen = 1000px to higher resolution desktops
 */
 
-@media (min-width: 600px) {
+@media (min-width: 1800px) {
   body #projects {
     font-size: x-large;
     display: flex;
@@ -74,15 +87,40 @@
     top: 40vh;
     left: 20vh;
     width: 60px;
-    z-index: 100;
+    z-index: 5;
     display: block;
-    animation-name: glitch, floating;
+    animation-name: glitch-original, floating;
     animation-iteration-count: 1, infinite;
     animation-timing-function: ease-in, ease;
     animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
-
+  body #title {
+    position: -webkit-sticky;
+    position: sticky;
+    font-size: 80px;
+    background-color: black;
+    width: 70vh;
+    top: 0;
+    margin-top: -30vh;
+    margin-bottom: 35vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 5;
+  }
+  body #subtitle {
+    position: absolute;
+    font-size: 35px;
+    background-color: black;
+    width: 60vh;
+    top: 82vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
   body .resume {
     font-size: x-large;
     color: white;
@@ -91,10 +129,10 @@
     top: 40vh;
     left: 80vw;
     width: 60px;
-    z-index: 100;
+    z-index: 5;
     display: block;
     opacity: 1;
-    animation-name: glitch, floating;
+    animation-name: glitch-original, floating;
     animation-iteration-count: 1, infinite;
     animation-timing-function: ease-in, ease;
     animation-duration: 2s, 2s;
@@ -105,13 +143,16 @@
     color: white;
     position: absolute;
     opacity: 1;
-    top: 13vh;
-    left: 47vw;
+    top: 3vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
     width: 60px;
-    z-index: 100;
+    z-index: 5;
     display: block;
     opacity: 1;
-    animation-name: glitch, floating;
+    animation-name: glitch-original, floating;
     animation-iteration-count: 1, infinite;
     animation-timing-function: ease-in, ease;
     animation-duration: 2s, 2s;
@@ -126,34 +167,155 @@
     margin-right: auto;
   }
 }
-#subtitle {
-  animation-name: fadeIn;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
+@media (max-width: 1800px) and (min-width: 600px) {
+  body #projects {
+    font-size: x-large;
+    display: flex;
+    color: white;
+    position: absolute;
+    top: 40vh;
+    left: 20vh;
+    width: 60px;
+    z-index: 5;
+    display: block;
+    animation-name: glitch-original, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
+    animation-direction: alternate;
+  }
+  body #title {
+    position: -webkit-sticky;
+    position: sticky;
+    font-size: 50px;
+    background-color: black;
+    width: 70vh;
+    top: 0vh;
+    margin-top: -30vh;
+    margin-bottom: 35vh;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body #subtitle {
+    position: absolute;
+    font-size: 23px;
+    background-color: black;
+    width: 60vh;
+    top: 82vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  body .resume {
+    font-size: x-large;
+    color: white;
+    position: absolute;
+    opacity: 1;
+    top: 40vh;
+    left: 80vw;
+    width: 60px;
+    z-index: 5;
+    display: block;
+    opacity: 1;
+    animation-name: glitch-original, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
+    animation-direction: alternate;
+  }
+  body .contactStyle {
+    font-size: x-large;
+    color: white;
+    position: absolute;
+    opacity: 1;
+    top: 3vh;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60px;
+    z-index: 100;
+    display: block;
+    opacity: 1;
+    animation-name: glitch-original, floating;
+    animation-iteration-count: 1, infinite;
+    animation-timing-function: ease-in, ease;
+    animation-duration: 2s, 2s;
+    animation-direction: alternate;
+  }
+  #pdf {
+    display: block;
+    width: 70vw;
+    height: 100vh;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.introSlide {
+  opacity: 1;
+  background-color: black;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  animation: fadeOut;
   animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+.introText {
+  margin: 0;
+  font-size: xx-large;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  animation: fadeIn;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+.footerText {
+  font-family: "Courier New", Courier, monospace;
+  margin-top: 8rem;
+  margin-bottom: 60;
+}
+.footerDivider {
+  bottom: 60;
+}
+#subtitle {
+  opacity: 0;
+  animation-name: fadeIn, glitch;
+  animation-delay: 3s, 6s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: ease-in, ease;
+  animation-duration: 5s, 9s;
 }
 .contactStyle:hover,
 .resume:hover,
-#projects:hover  {
+#projects:hover {
   opacity: 1;
-  animation: glitch 0.85s;
+  animation: glitch-original 0.85s;
   animation-iteration-count: infinite;
-  animation-play-state: running;
 }
 
 #threescene {
   opacity: 1;
-  animation-name: fadeInOpacity;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
 }
 #title {
   opacity: 1;
-  animation-name: glitch;
-  animation-iteration-count: 1;
-  animation-timing-function: ease-in;
-  animation-duration: 2s;
+  animation-name: glitch, glitch;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: ease-in, ease;
+  animation-delay: 0s, 9s;
+  animation-duration: 15s, 9s;
 }
 #rootmain {
   vertical-align: middle;
@@ -171,16 +333,7 @@
     transform: translateY(0.3rem);
   }
 }
-@keyframes fadeInOpacity {
-  0% {
-    opacity: 0;
-    transform: scale(0.01);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -189,18 +342,101 @@
     opacity: 1;
   }
 }
-
-@keyframes loaded {
-  100% {
+@keyframes fadeOut {
+  0% {
     opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
 @keyframes glitch {
+  0.333% {
+    text-shadow: 3px 3px green, -2px- 2px cyan;
+    text-decoration: underline;
+  }
+  0.667% {
+    text-shadow: -3px-3px green, 2px 2px cyan;
+    text-decoration: none;
+  }
+  1% {
+    text-shadow: -4px -3px red, 4px 2px blue;
+  }
+  1.333% {
+    text-shadow: 3px 3px green, -2px -2px cyan;
+  }
+  1.667% {
+    text-shadow: -3px -3px green, 2px 2px green;
+    color: black;
+  }
+  2% {
+    text-shadow: 3px 3px green, -2px -2px cyan;
+  }
+  2.333% {
+    text-shadow: -1px -1px white, 1px 1px white;
+    color: black;
+  }
+  2.667% {
+    text-shadow: -6px -3px green, 6px 2px cyan;
+    color: white;
+  }
+  3% {
+    text-shadow: -5px -3px green, 5px 2px cyan;
+    text-decoration: underline;
+  }
+  3.333% {
+    text-shadow: -3px -3px green, 3px 2px cyan;
+    text-decoration: none;
+  }
+  3.667% {
+    text-shadow: -5px -3px green, 5px 2px yellow;
+  }
+  4% {
+    text-shadow: -0px -3px purple, 0px 2px cyan;
+  }
+  4.333% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+  4.667% {
+    text-shadow: 2px 0px green, 2x 0px cyan;
+    text-decoration: line-through;
+  }
+  5% {
+    text-shadow: 0px 8px green, 0px 8px cyan;
+    text-decoration: none;
+  }
+  5.333% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+  5.667% {
+    text-shadow: -4px 0px purple, -9px 0px yellow;
+    text-decoration: overline;
+  }
+  6% {
+    text-shadow: 0px -5px green, 0px -4px cyan;
+    text-decoration: none;
+  }
+  6.333% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+  6.667% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+  100% {
+    text-shadow: 0px 0px green, 0px 0px cyan;
+  }
+}
+
+@keyframes glitch-original {
   5% {
     text-shadow: 3px 3px green, -2px -2px cyan;
     text-decoration: underline;
   }
+
   10% {
     text-shadow: -3px -3px green, 2px 2px cyan;
     text-decoration: none;

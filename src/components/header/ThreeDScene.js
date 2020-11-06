@@ -35,8 +35,9 @@ class ThreeDScene extends React.Component {
       1,
       50
     );
-    mainCamera.position.z = 10;
+    mainCamera.position.z = 15;
     mainCamera.position.y = 0.3;
+    mainCamera.position.x = -0.03;
     const occlusionCamera = mainCamera.clone();
     occlusionCamera.layers.set(OCCLUSION_LAYER);
 
@@ -44,7 +45,7 @@ class ThreeDScene extends React.Component {
 
     const backLight = new THREE.PointLight(0x1b03a3, 3, 25);
     backLight.layers.enable(OCCLUSION_LAYER);
-    backLight.position.set(0, 2, 0);
+    backLight.position.set(1, 5, 1);
     mainScene.add(backLight);
 
     const fillLight = new THREE.PointLight(0x0ee3ff, 1.5, 20);
@@ -54,7 +55,7 @@ class ThreeDScene extends React.Component {
 
     const keyLight = new THREE.PointLight(0x00a698, 2, 2);
     keyLight.layers.enable(OCCLUSION_LAYER);
-    keyLight.position.set(0, 1, 0);
+    keyLight.position.set(0, 4, 0);
     mainScene.add(keyLight);
 
     // Create Renderer
@@ -81,7 +82,7 @@ class ThreeDScene extends React.Component {
     mainScene.add(modelContainer);
 
     loader.load(
-      "./scene.glb",
+      "./reduced.glb",
       (gltf) => {
         // Add default mesh
         modelContainer.add(gltf.scene);
@@ -103,8 +104,8 @@ class ThreeDScene extends React.Component {
       undefined,
       console.error
     );
-    modelContainer.rotation.y = 5;
-    modelContainer.position.x = -0.15;
+    modelContainer.rotation.y = 0;
+    modelContainer.position.x = -0.05;
 
     const renderTarget = new THREE.WebGLRenderTarget(
       window.innerWidth,
@@ -233,9 +234,8 @@ class ThreeDScene extends React.Component {
     // Mouse Move
 
     function mousemove(e) {
-      modelContainer.rotation.y = 6;
       modelContainer.rotation.y =
-        2 * ((e.clientX / window.innerWidth) * 0.8 - 1);
+        2 * ((e.clientX / window.innerWidth) * 0.7 - 0.4);
     }
     this.mount.addEventListener("mousemove", mousemove);
 
@@ -324,15 +324,11 @@ class ThreeDScene extends React.Component {
 
     window.addEventListener("scroll", () => {
       var scrollPosition = window.scrollY;
-      console.log(
-        document.getElementById("threescene").children[0].firstChild.height
-      );
-      console.log(scrollPosition);
+
       //element is almost about to be visible, time to start rendering
       if (scrollPosition < window.innerHeight - 150) {
         if (!isRendering) {
           render();
-          console.log("render has been started");
         } else {
           //wait until everythingIsLoaded is true
         }
@@ -342,7 +338,6 @@ class ThreeDScene extends React.Component {
         //this doesn't work, dunno how to do this
         if (animationFrame) {
           stopRendering(animationFrame);
-          console.log("render has been halted");
         }
       }
     });
