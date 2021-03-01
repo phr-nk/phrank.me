@@ -15,7 +15,7 @@
     "react-scripts": "^3.4.3",
     "react-three-fiber": "^4.1.4",
     "react-transition-group": "^4.4.1",
-    "three": "^0.115.0"
+    "three": "^0.125.0"
   },
   "scripts": {
     "predeploy": "npm run build",
