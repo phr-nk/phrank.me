@@ -1,5 +1,6 @@
 import React from "react";
-import ThreeDScene from "../header/ThreeDScene";
+import Bust3D from "../header/Bust3D";
+import Github3DSkyline from "../header/Github3DSkyline";
 import "./Root.css";
 import Fade from "react-reveal/Fade";
 import About from "../About/About";
@@ -9,6 +10,7 @@ import Contact from "../Contact/Contact";
 
 import fetchProjects from "../../api/apiProjects";
 
+var codeIcon = require("../../assets/icons/code-64.png");
 var pdf = require("../../assets/updated_resume_8_2020.pdf");
 var default_picture = require("../../assets/binary.jpg");
 class Root extends React.Component {
@@ -42,7 +44,6 @@ class Root extends React.Component {
     } else {
       return (
         <div id="rootmain">
-          
           <a href="#projectsection" id="projects">
             Projects
           </a>{" "}
@@ -52,16 +53,40 @@ class Root extends React.Component {
           <a className="resume" href="#pdf">
             Resume
           </a>
-          <section id="threescene">
+          <section className="threescene">
             {" "}
-            <ThreeDScene />{" "}
+            <Bust3D
+              object="reduced.glb"
+              shaders={true}
+              animation="follow"
+            />{" "}
           </section>
-          <div className="introSlide"> <h1 className="introText">Welcome to PHRANK.ME</h1>  </div>
+          <div className="introSlide">
+            {" "}
+            <h1 className="introText">Welcome to PHRANK.ME</h1>{" "}
+          </div>
           <h1 id="title">Hi, I'm Frank Lenoci </h1>
           <h2 id="subtitle">Click Anywhere Above for Ripple Effect </h2>
-          
           <Fade bottom>
             <About></About>
+          </Fade>
+          <Fade bottom>
+            <section className="threescene">
+              <h1 id="Skyline">3D Skyline of my 2020 GitHub Contributions</h1>
+              <a
+                className="code"
+                href="https://github.com/phr-nk?tab=overview&from=2020-12-01&to=2020-12-31"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img src={codeIcon}></img>
+              </a>
+              <Github3DSkyline
+                object="phr-nk_2020.glb"
+                shaders={true}
+                animation="rotate"
+              />
+            </section>
           </Fade>
           <Fade bottom>
             <div id="projectsection">
@@ -93,8 +118,14 @@ class Root extends React.Component {
           <Fade bottom>
             <div id="contact">
               <Contact></Contact>
-           
-              <footer >  <h2 className="footerText"> <hr></hr>Designed and Developed by Frank Lenoci</h2></footer>
+
+              <footer>
+                {" "}
+                <h2 className="footerText">
+                  {" "}
+                  <hr></hr>Designed and Developed by Frank Lenoci
+                </h2>
+              </footer>
             </div>
           </Fade>
         </div>

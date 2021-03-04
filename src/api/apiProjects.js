@@ -2,16 +2,38 @@ export default async function fetchProjects() {
   return new Promise((resolve, reject) =>
     resolve([
       {
+        id: "cultra",
+        name: "Cultra App",
+        subtitle:
+          "A cross platform app that works on both iOS and Andriod using Expo/React Native/Firebase.",
+        description:
+          "This is an app for connecting creative people together and bridging the gap between their respective mediums. This app was built for Cultra Offical as part of their internship program. I worked on mainly front-end with some minimal setup of Firebase email authentication.",
+        links: [
+          {
+            url: "https://expo.io/@flenoci/projects/cultra-app",
+            githubUrl: "https://github.com/JmCole19/Cultra-App",
+
+            extra_image1:
+              "https://raw.githubusercontent.com/phr-nk/Storage/master/Cultra/mainscreen.JPG",
+            extra_image2:
+              "https://raw.githubusercontent.com/phr-nk/Storage/master/Cultra/android_gif.gif",
+            extra_image3:
+              "https://raw.githubusercontent.com/phr-nk/Storage/master/Cultra/ios_gif.gif",
+          },
+        ],
+        img:
+          "https://raw.githubusercontent.com/phr-nk/Storage/master/Cultra/cross_platform_gif.gif",
+      },
+      {
         id: "phranksart",
         name: "Phrank's Art",
         subtitle: "A web app created using ASP.NET and Blazor pages.",
         description:
-          "This was a project built using the ASP.NET web framework and hosted on Microsoft's Azure servers. I uses Blazor pages for most of the frontend components and Three.js for rendering the 3D models.",
+          "This was a project built using the ASP.NET web framework and hosted on Microsoft's Azure servers. I used Blazor pages for most of the frontend components and Three.js for rendering the 3D models.",
         links: [
           {
             url: "https://phranksart.azurewebsites.net/",
             githubUrl: "https://github.com/phr-nk/PhranksArt",
-            
           },
         ],
         img:
@@ -20,9 +42,9 @@ export default async function fetchProjects() {
       {
         id: "whosgoing",
         name: "Who's Going?",
-        subtitle: "Full-stack social media site using firebase and ReactJS.",
+        subtitle: "Full-stack social media site using Firebase and ReactJS.",
         description:
-          "This was a full-stack project using ReactJS for the front-end and Firebase for the back-end and hosting. The goal of this project was to make a social media site where users could connect based on similar music interests and then got to live music events with each other. I used the Songkick API in order to fetch local events for users and leaflet to display the venues on a map. I also used Redux in order to pass data between components and prop types. All of the backend functions are done via an API I built using Firebase's cloud functions, with the operations then being executed on the cloud firestore. This project is still in development. ",
+          "This was a full-stack project using ReactJS for the front-end and Firebase for the back-end and hosting. The goal of this project was to make a social media site where users could connect based on similar music interests and then got to live music events with each other. I used the Songkick API in order to fetch local events for users and leaflet to display the venues on a map. I also used Redux in order to pass data between components and prop types. All of the backend functions are done via an API I built using Firebase's cloud functions, with the operations then being executed on the cloud Firestore. This project is still in development. ",
         links: [
           {
             url: "https://whosgoing.web.app/",
@@ -42,7 +64,7 @@ export default async function fetchProjects() {
         id: "shirtify",
         name: "Shirtify",
         subtitle:
-          "A web app that makes use of the Spotifiy API, utlizing ReactJS and D3 for the website UI.",
+          "A web app that makes use of the Spotifiy API, utilizing ReactJS and D3 for the website UI.",
         description:
           "This Spotify web app takes a user's top artists and finds which genre comes up the most. This is done by storing the words in a data structure and then using that data with D3 in order to produce a word cloud on a t-shirt. A user can then download their shirt or design once they picked the required parameters.",
         links: [
@@ -56,7 +78,7 @@ export default async function fetchProjects() {
       {
         id: "Commuter",
         name: "Commuter Chronicles",
-        subtitle: "An iOS app developed for my iOS class at DePaul.",
+        subtitle: "An app developed for my iOS class at DePaul.",
         description:
           "This goal of this project was to make the average person’s commute to work or school a little more interesting. The way I thought I could accomplish this was by having them play a simulated adventure game, where the world is their map and they must enter dungeons and fight monsters that will be spawned around the real world. I was heavily inspired by the groundbreaking game Pokémon Go and thought it was a great starting point for a more role-playing based game. A very useful source that I found was a tutorial at https://www.raywenderlich.com/823-advanced-mapkit-tutorial-custom-tiles. I followed this tutorial and expanded on the provided code to bring my game idea to life.",
         links: [
@@ -76,7 +98,7 @@ export default async function fetchProjects() {
       {
         id: "NYT",
         name: "New York Times Archiver - News Flash",
-        subtitle: "Final project for my web applications class.",
+        subtitle: "Final project for my web applications class at DePaul.",
         description:
           "This was the final project for my web applications class at DePaul and we were tasked with finding an API and displaying the data in an interesting way. The front-end/UI is built on the ReactJS framework with the help of Material-ui for clean and organized components. The charts are visualized by the ChartsJS library and are dynamically rendered once an AJAX call returns data from the NYT API. The NYT API can give us metadata such as, keywords/tags, geo-tags, article links, thumbnail links, popular articles etc. These of course can all be extrapulated and analyzed to display the graphs and render the news feed. Of course all of these frameworks are in JavaScript and as such our server is hosted through Heroku by integrating NodeJS as the internal server.",
         links: [
@@ -92,7 +114,7 @@ export default async function fetchProjects() {
         id: "Sudoku",
         name: "React Sudoku",
         subtitle:
-          "Sudoku front-end application utlizing the ReactJS framework.",
+          "Sudoku front-end application utilizing the ReactJS framework. ",
         description:
           "The sudoku puzzle game, developed in React for my Web Applications class at DePaul University. This helped us learn about React and state management. We used a Sudoku npm library in order to generate the puzzle and see if the users entered the correct guess. There is also functionality to go back steps in your game and then make new ones, also to finish most of the puzzle in order to test if the game works.",
         links: [
@@ -139,7 +161,7 @@ export default async function fetchProjects() {
         subtitle:
           "A ASCII based rogue like you can play in the command line, written in C++.",
         description:
-          "This is a project i worked on sophomore year at Harper college, written in C++. It is an attempt at a rogue-like style game running in the at the command line. Currently it is still buggy, with enemies not doing damage to the player and the loot system not working that well. The maps are imported as txt files and can be as big or small as desired. There are different types of monsters to encounter which give different amounts of exp for defeating them. The combat works on a role based system where the player and enemy role to see who gets deals damage.",
+          "This is a project I worked on sophomore year at Harper college, written in C++. It is an attempt at a rogue-like style game running in the at the command line. Currently it is still buggy, with enemies not doing damage to the player and the loot system not working that well. The maps are imported as txt files and can be as big or small as desired. There are different types of monsters to encounter which give different amounts of exp for defeating them. The combat works on a role based system where the player and enemy role to see who gets deals damage. ",
         links: [
           { githubUrl: "https://github.com/phr-nk/CommandLineRogueLike" },
         ],

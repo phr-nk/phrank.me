@@ -56,7 +56,16 @@
     animation-duration: 2s, 2s;
     animation-direction: alternate;
   }
-  body #threescene {
+  body .code{
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin-top:150%;
+    margin-left:20%;
+    
+  }
+
+  body .threescene {
     animation-name: fadeIn;
     animation-iteration-count: 1;
     animation-timing-function: ease-in;
@@ -256,6 +265,17 @@
     margin-right: auto;
   }
 }
+#Skyline{
+  margin-top: 15vh;
+ position: absolute;
+ left: 0;
+    right: 0;
+    z-index: 5;
+    margin-left: auto;
+    margin-right: auto;
+  font-size: x-large;
+
+}
 .introSlide {
   opacity: 1;
   background-color: black;
@@ -306,7 +326,7 @@
   animation-iteration-count: infinite;
 }
 
-#threescene {
+.threescene {
   opacity: 1;
 }
 #title {
@@ -316,6 +336,14 @@
   animation-timing-function: ease-in, ease;
   animation-delay: 0s, 9s;
   animation-duration: 15s, 9s;
+}
+.code{
+  
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin-top:40%;
+  margin-left:20%;
 }
 #rootmain {
   vertical-align: middle;

@@ -8,7 +8,9 @@ import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass";
 import { FilmPass } from "three/examples/jsm/postprocessing/FilmPass";
 import { GlitchPass } from "three/examples/jsm/postprocessing/GlitchPass";
 import { DotScreenPass } from "three/examples/jsm/postprocessing/DotScreenPass";
-import { OutlinePass } from "three/examples/jsm/postprocessing/OutlinePass";
+import { LuminosityShader } from "three/examples/jsm/shaders/LuminosityShader.js";
+import { HalftonePass } from "three/examples/jsm/postprocessing/HalftonePass.js";
+import { SobelOperatorShader } from "three/examples/jsm/shaders/SobelOperatorShader.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass";
 import { AfterimagePass } from "three/examples/jsm/postprocessing/AfterimagePass";
 
@@ -45,12 +47,12 @@ class ThreeDScene extends React.Component {
 
     const backLight = new THREE.PointLight(0x1b03a3, 3, 25);
     backLight.layers.enable(OCCLUSION_LAYER);
-    backLight.position.set(1, 5, 1);
+    backLight.position.set(0, 4, 1);
     mainScene.add(backLight);
 
-    const fillLight = new THREE.PointLight(0x0ee3ff, 1.5, 20);
+    const fillLight = new THREE.PointLight(0x0ee3ff, 0.5, 20);
     fillLight.layers.enable(OCCLUSION_LAYER);
-    fillLight.position.set(0, -0.9, 0);
+    fillLight.position.set(0, 3, 3);
     mainScene.add(fillLight);
 
     const keyLight = new THREE.PointLight(0x00a698, 2, 2);
@@ -67,12 +69,16 @@ class ThreeDScene extends React.Component {
     const effect = new AsciiEffect(renderer, " .:-=+*10 ", {
       invert: false,
     });
-    effect.setSize(window.innerWidth - 50, window.innerHeight);
+    effect.setSize(window.innerWidth, window.innerHeight);
     effect.domElement.style.color = "green";
     effect.domElement.style.backgroundColor = "black";
 
+    //mount for ascii effect
     //this.mount.appendChild(effect.domElement);
+
+    //mount for composer effects
     this.mount.appendChild(renderer.domElement);
+
     // Load 3D Model
 
     const loader = new GLTFLoader();
@@ -82,7 +88,7 @@ class ThreeDScene extends React.Component {
     mainScene.add(modelContainer);
 
     loader.load(
-      "./reduced.glb",
+      "./" + this.props.object,
       (gltf) => {
         // Add default mesh
         modelContainer.add(gltf.scene);
@@ -231,13 +237,19 @@ class ThreeDScene extends React.Component {
       };
     }
 
+    //Animations:
+
     // Mouse Move
 
     function mousemove(e) {
       modelContainer.rotation.y =
         2 * ((e.clientX / window.innerWidth) * 0.7 - 0.4);
     }
-    this.mount.addEventListener("mousemove", mousemove);
+    if (this.props.animation == "follow") {
+      this.mount.addEventListener("mousemove", mousemove);
+    }
+
+    //Rotate
 
     //effect composer
     var composer = new EffectComposer(renderer);
@@ -246,33 +258,61 @@ class ThreeDScene extends React.Component {
     const filmPass = new FilmPass(0.6, 0.025, 648, false);
     //composer.addPass(filmPass);
 
-    const afterimagePass = new AfterimagePass();
-    afterimagePass.uniforms["damp"].value = 0.98;
-    composer.addPass(afterimagePass);
+    const effectGrayScale = new ShaderPass(LuminosityShader);
+    //composer.addPass(effectGrayScale);
 
-    const glitchPass = new GlitchPass();
-    //composer.addPass(glitchPass);
-
-    const dotPass = new DotScreenPass();
-    composer.addPass(dotPass);
-
-    const bloomPass = new UnrealBloomPass(
-      new THREE.Vector2(window.innerWidth, window.innerHeight),
-      1.5,
-      0.4,
-      0.85
+    const sobelPass = new ShaderPass(SobelOperatorShader);
+    sobelPass.uniforms["resolution"].value.x =
+      window.innerWidth * window.devicePixelRatio;
+    sobelPass.uniforms["resolution"].value.y =
+      window.innerHeight * window.devicePixelRatio;
+    //composer.addPass(sobelPass);
+    const params = {
+      shape: 1,
+      radius: 4,
+      rotateR: Math.PI / 12,
+      rotateB: (Math.PI / 12) * 2,
+      rotateG: (Math.PI / 12) * 3,
+      scatter: 0,
+      blending: 1,
+      blendingMode: 1,
+      greyscale: false,
+      disable: false,
+    };
+    const halftonePass = new HalftonePass(
+      window.innerWidth,
+      window.innerHeight,
+      params
     );
-    bloomPass.threshold = 0.25;
-    bloomPass.strength = 2;
-    bloomPass.radius = 0.2;
+    //composer.addPass(halftonePass);
+    if (this.props.shaders == true) {
+      const afterimagePass = new AfterimagePass();
+      afterimagePass.uniforms["damp"].value = 0.98;
+      composer.addPass(afterimagePass);
 
-    composer.addPass(bloomPass);
+      const glitchPass = new GlitchPass();
+      //composer.addPass(glitchPass);
 
-    const ripplePass = new ShaderPass(RippleShader());
-    ripplePass.uniforms.tRipple.value = rippleTexture;
-    ripplePass.needsSwap = false;
-    composer.addPass(ripplePass);
+      const dotPass = new DotScreenPass();
+      composer.addPass(dotPass);
 
+      const bloomPass = new UnrealBloomPass(
+        new THREE.Vector2(window.innerWidth, window.innerHeight),
+        1.5,
+        0.4,
+        0.85
+      );
+      bloomPass.threshold = 0.25;
+      bloomPass.strength = 2;
+      bloomPass.radius = 0.2;
+
+      composer.addPass(bloomPass);
+
+      const ripplePass = new ShaderPass(RippleShader());
+      ripplePass.uniforms.tRipple.value = rippleTexture;
+      ripplePass.needsSwap = false;
+      composer.addPass(ripplePass);
+    }
     // Handle Window Resize
 
     function resizeRenderer() {
@@ -307,8 +347,8 @@ class ThreeDScene extends React.Component {
     function render() {
       const delta = clock.getDelta();
 
-      // Render
-
+      // Render with composer effects (un comment code below)
+      //=============================
       renderRipples(delta);
 
       renderer.setRenderTarget(renderTarget);
@@ -316,9 +356,15 @@ class ThreeDScene extends React.Component {
 
       renderer.setRenderTarget(null);
       composer.render();
-
+      //==============================
+      // modelContainer.rotation.y += 0.05;
       animationFrame = requestAnimationFrame(render);
+
       isRendering = true;
+      //Render with ascii effect (un comment code below)
+      //==============================
+      //effect.render(mainScene, mainCamera);
+      //==============================
     }
     render();
 

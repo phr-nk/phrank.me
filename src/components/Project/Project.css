@@ -45,6 +45,7 @@
     object-fit: cover;
     margin: 1rem;
   }
+ 
 }
 @media (max-width: 1800px) and (min-width: 600px) {
   body .project-content {
@@ -164,12 +165,16 @@
   margin-right: 20vw;
   padding: 20px;
 }
+.projectLinks {
+  display: flex;
+  justify-content: center;
+}
 .projectPageLink {
   color: white;
-  text-align: center;
   font-family: "Courier New", Courier, monospace;
-  margin-left: 20vw;
-  margin-right: 20vw;
+  margin:auto;
+  
+  
 }
 .projectPageImageContainer {
   display: flex;
@@ -185,6 +190,8 @@
 .iconLink {
   width: 3vw;
   height: 3vw;
+  border-radius: 100%;
+  
 }
 .back-button {
   background-color: black;

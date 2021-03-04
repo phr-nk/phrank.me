@@ -3,6 +3,7 @@ import "./Project.css";
 import fetchProjects from "../../api/apiProjects";
 import { withRouter } from "react-router-dom";
 const github = require("../../assets/icons/github_icon.png");
+const globe = require("../../assets/icons/globe_icon.png");
 class ProjectPage extends React.Component {
   constructor(props) {
     super(props);
@@ -54,20 +55,31 @@ class ProjectPage extends React.Component {
           alt="main"
           className="projectPageImage"
           src={this.state.image}
-          style={{height: 400, width:800, objectFit: "cover"}}
         ></img>
         <div className="projectPageTitle">
           DESCRIPTION{" "}
           <div className="projectPageContent">{this.state.description}</div>
         </div>
-        <a className="projectPageLink" href={this.state.githubUrl}target= "_blank" rel="noopener noreferrer">
-          <img alt="github" className="iconLink" src={github}></img>
-          Source code
-        </a>
-        <a className="projectPageLink" href={this.state.liveUrl}target= "_blank" rel="noopener noreferrer">
-          Live URL
-          
-        </a>
+        <div className="projectLinks">
+          <a
+            className="projectPageLink"
+            href={this.state.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img alt="github" className="iconLink" src={github}></img>
+            Source code
+          </a>
+          <a
+            className="projectPageLink"
+            href={this.state.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live URL
+            <img alt="github" className="iconLink" src={globe}></img>
+          </a>
+        </div>
         {this.state.links[0] !== undefined ? (
           <div className="projectPageImageContainer">
             {this.state.links[0].extra_image1 !== undefined ? (
@@ -77,7 +89,7 @@ class ProjectPage extends React.Component {
                 src={this.state.links[0].extra_image1}
               ></img>
             ) : (
-              <di>No image</di>
+              <div>No image</div>
             )}
             {this.state.links[0].extra_image2 !== undefined ? (
               <img
@@ -86,7 +98,7 @@ class ProjectPage extends React.Component {
                 src={this.state.links[0].extra_image2}
               ></img>
             ) : (
-              <di>No image</di>
+              <div>No image</div>
             )}
             {this.state.links[0].extra_image3 !== undefined ? (
               <img
@@ -95,7 +107,7 @@ class ProjectPage extends React.Component {
                 src={this.state.links[0].extra_image3}
               ></img>
             ) : (
-              <di>No image</di>
+              <div>No image</div>
             )}
           </div>
         ) : (
